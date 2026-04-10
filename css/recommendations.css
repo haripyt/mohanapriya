@@ -1,0 +1,501 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    padding-top:80px;   
+}
+
+:root{
+--bg:#ffffff;
+--text:#0f172a;
+--card:#ffffff;
+--border:#e5e7eb;
+}
+
+body.dark{
+--bg:#0f172a;
+--text:#e2e8f0;
+--card:#1f2937;
+--border:#374151;
+}
+
+.logo{
+    font-weight:700;
+    font-size:20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px 80px;
+}
+
+.back-link{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#334155;
+    font-size:14px;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+
+.page-title{
+    font-size:36px;
+    font-weight:800;
+    margin-bottom:6px;
+}
+
+.recommendation-meta{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+.tabs{
+    display:flex;
+    background:#e5e7eb;
+    border-radius:6px;
+    overflow:hidden;
+    margin-bottom:40px;
+}
+
+.tab{
+    flex:1;
+    padding:12px;
+    text-align:center;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    font-weight:500;
+    color:#334155;
+    transition:0.2s;
+}
+
+.tab.active{
+    background:white;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    font-weight:600;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    padding:22px;
+    border-radius:8px;
+    border:1px solid var(--border);
+}
+
+.badge{
+    font-size:12px;
+    padding:4px 8px;
+    border-radius:4px;
+    font-weight:600;
+    display:inline-block;
+    margin-bottom:10px;
+}
+
+.badge-high{
+    background:#ecfdf5;
+    color:#047857;
+}
+
+.badge-medium{
+    background:#fef9c3;
+    color:#92400e;
+}
+
+
+.card h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.card p{
+    font-size:14px;
+    color:#475569;
+    margin-bottom:14px;
+    line-height:1.6;
+}
+
+.card-footer{
+    font-size:13px;
+}
+
+.career-card{
+    position:relative;
+    min-height:220px;
+}
+
+.top-badge{
+    position:absolute;
+    top:18px;
+    right:18px;
+}
+
+.card-footer{
+    margin-top:16px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    row-gap:6px;
+    font-size:13px;
+}
+
+
+.role-card {
+    background:  var(--card);
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.role-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.role-top h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.match-score {
+    text-align: right;
+}
+
+.match-score span {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.match-score strong {
+    color: #22c55e;
+    font-size: 18px;
+}
+
+.role-desc {
+    margin: 15px 0;
+    color: #374151;
+}
+
+.skills-label {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+}
+
+.skill-tags span {
+    display: inline-block;
+    background: var(--text);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 4px 6px 0 0;
+}
+
+.role-card-clean {
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--card);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+}
+
+.role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.match-badge {
+    background: #e0f7ec;
+    color: #16a34a;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.role-description {
+    margin-bottom: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.skills-label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    margin-top: 8px;
+}
+
+.skill-tags span {
+    display: inline-block;
+    background:  var(--border);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 4px 4px 0 0;
+}
+
+body.dark .skill-tags span{
+background:#334155;
+color:#e2e8f0;
+}
+
+.page-title {
+    margin-bottom: 6px;
+}
+
+/* Make heading + meta act like header row */
+.page-title,
+.recommendation-meta {
+    max-width: 100%;
+}
+
+/* Convert meta to flex row */
+.recommendation-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+/* Push button to right */
+.recommendation-meta .download-btn {
+    margin-left: auto;
+}
+
+/* Button styling */
+.download-btn {
+    padding: 8px 14px;
+    background: #111827;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #1f2937;
+}
+
+/* ================= NAVBAR ================= */
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Right Side */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Buttons */
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #111827;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-btn i {
+    width: 18px;
+    height: 18px;
+}
+
+/* Hover */
+.nav-btn:hover {
+    background: #f3f4f6;
+}
+
+/* Logout Highlight */
+.logout-btn {
+    background: #111827;
+    color: #ffffff;
+    border: none;
+}
+
+.logout-btn:hover {
+    background: #1f2937;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #111827;
+}
+
+.back-link:hover {
+    opacity: 0.7;
+}
+
+/* =========================
+   TAB WRAPPER
+========================= */
+
+.recommendation-tabs {
+    display: flex;
+    gap: 10px;
+    background: var(--card);
+    padding: 8px;
+    border-radius: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.recommendation-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+/* =========================
+   TAB BUTTON
+========================= */
+
+.tab-btn {
+    flex: 1;
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* ICON SIZE */
+.tab-btn i {
+    width: 18px;
+    height: 18px;
+}
+
+/* HOVER */
+.tab-btn:hover {
+    background: #e2e8f0;
+}
+
+/* ACTIVE TAB */
+.tab-btn.active {
+    background: var(--card);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.btn-primary{
+background:var(--primary);
+border:none;
+color:white;
+padding:12px 22px;
+border-radius:8px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+transition:all 0.3s ease;
+}
+
+.btn-primary:hover{
+
+transform:translateY(-4px) scale(1.03);
+
+background:linear-gradient(
+90deg,
+var(--primary),
+#4f46e5,
+var(--primary)
+);
+
+background-size:200%;
+
+animation:gradientMove 3s linear infinite;
+
+box-shadow:0 15px 35px rgba(0,0,0,0.35);
+
+}
+
+@keyframes gradientMove{
+0%{background-position:0%}
+100%{background-position:200%}
+}
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .recommendation-tabs {
+        gap: 6px;
+        padding: 6px;
+    }
+
+    .tab-btn {
+        min-width: 120px;
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .tab-btn i {
+        width: 16px;
+        height: 16px;
+    }
+}
