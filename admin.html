@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>CareerAI Admin</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">CareerAI Admin</div>
+
+<div>
+<button class="btn-outline" onclick="logout()">Logout</button>
+</div>
+
+</header>
+
+
+<section class="hero" style="margin-top:80px">
+
+<div class="hero-content">
+
+<span class="badge">ADMIN CONTROL PANEL</span>
+
+<h1>Admin Dashboard</h1>
+
+<div class="admin-message-box">
+
+<div class="admin-icon">⚡</div>
+
+<div class="admin-text">
+<p id="adminMessage"></p>
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<div class="carousel">
+<img src="https://i.pinimg.com/originals/6e/36/41/6e3641df4d4ff70e70554064ff9739a3.gif" class="active">
+<img src="https://i.pinimg.com/originals/09/43/38/0943380f16ed6a3d997254286056692f.gif">
+<img src="https://i.pinimg.com/originals/ee/d0/21/eed021ac7e9840fb3a389d9153bd0c61.gif">
+<img src="https://i.pinimg.com/originals/a4/25/d6/a425d6a2dc30a5cc0dbbd881a10fcf7e.gif">
+</div>
+
+<div class="carousel-progress">
+
+<div class="progress-bar"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section style="padding:40px 8%">
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Logins</h3>
+<p id="totalLogins">0</p>
+</div>
+
+<div class="card">
+<h3>Unique Users</h3>
+<p id="uniqueUsers">0</p>
+</div>
+
+<div class="card">
+<h3>Latest Login</h3>
+<p id="latestLogin">-</p>
+</div>
+
+<div class="card">
+<h3>System Status</h3>
+<p>Active</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section style="padding:20px 8%; display:flex; gap:30px">
+
+<div style="flex:2">
+
+<div class="card">
+
+<div style="display:flex; justify-content:space-between; margin-bottom:20px">
+
+<input id="searchUser" placeholder="Search user..." style="padding:10px;width:200px">
+
+<div>
+
+<select id="sortType">
+
+<option value="name">Sort by Name</option>
+<option value="time">Sort by Time</option>
+
+</select>
+
+<select id="sortOrder">
+
+<option value="asc">Ascending</option>
+<option value="desc">Descending</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<table style="width:100%">
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Password</th>
+<th>Login Time</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="userTable"></tbody>
+
+</table>
+
+</div>
+
+
+<div style="margin-top:30px" class="card">
+
+<h3>Login Heatmap</h3>
+
+<canvas id="loginChart"></canvas>
+
+</div>
+
+</div>
+
+
+
+<div style="flex:1">
+
+<div class="card">
+
+<h3>Live Clock</h3>
+
+<p id="clock"></p>
+<p id="date"></p>
+
+</div>
+
+
+<div class="card" style="margin-top:20px">
+
+<h3>Activity Timeline</h3>
+
+<ul id="timeline"></ul>
+
+</div>
+
+
+<div class="card" style="margin-top:20px">
+
+<button class="btn-primary" onclick="clearHistory()">Clear Login History</button>
+
+<button class="btn-outline" onclick="exportCSV()">Export CSV</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div id="themeButton">🎨</div>
+
+<div id="themePanel">
+
+<p class="theme-title">Theme</p>
+
+<div class="theme-option" data-theme="light">
+<span class="dot light"></span> Light
+</div>
+
+<div class="theme-option" data-theme="dark">
+<span class="dot dark"></span> Dark
+</div>
+
+<p class="theme-title">Accent</p>
+
+<div class="accent-row">
+
+<div class="theme-color" data-color="#7c3aed" style="background:#7c3aed"></div>
+<div class="theme-color" data-color="#22c55e" style="background:#22c55e"></div>
+<div class="theme-color" data-color="#f97316" style="background:#f97316"></div>
+<div class="theme-color" data-color="#ef4444" style="background:#ef4444"></div>
+<div class="theme-color" data-color="#0ea5e9" style="background:#0ea5e9"></div>
+
+</div>
+
+</div>
+
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>

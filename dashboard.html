@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - CareerAI</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">CareerAI</div>
+    <div class="nav-right">
+        <button class="nav-link" id="homeBtn">Home</button>
+        <button class="nav-outline">Logout</button>
+    </div>
+</nav>
+
+<section class="dashboard">
+
+    <!-- WELCOME -->
+    <div class="welcome">
+        <h1 id="welcomeText"></h1>
+        <p id="welcomeSubText"></p>
+    </div>
+
+    <!-- ACTION CARDS -->
+    <div class="action-grid">
+
+        <div class="action-card primary" id="newAssessmentCard">
+            <i data-lucide="file-text"></i>
+            <h3>New Assessment</h3>
+            <p>Take a career questionnaire</p>
+        </div>
+
+        <div class="action-card" id="uploadResumeCard">
+            <i data-lucide="file-text"></i>
+            <h3>Upload Resume</h3>
+            <p>Get recommendations from your CV</p>
+        </div>
+    </div>
+
+   <div class="history-header">
+        <h2>Your Recommendations</h2>
+        <button id="clearAllBtn" class="clear-btn" style="display:none;">
+            Clear All History
+        </button>
+    </div>
+
+<!-- EMPTY STATE -->
+<div id="emptyState" class="empty-state">
+    <p>No recommendations yet</p>
+    <button class="primary-btn" id="startAssessmentBtn">
+        Start Your First Assessment
+    </button>
+</div>
+
+<!-- RECOMMENDATION GRID -->
+<div id="recommendationSection" class="recommendation-grid" style="display:none;">
+    <!-- Cards will be inserted dynamically -->
+</div>
+
+
+</section>
+
+<script src="js/theme.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: * 
+Disallow: /wp-admin/ 
+Disallow: /wp-content/ 
+Sitemap: https://harihere.space/sitemap.xml

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+<title>Upload Resume - CareerAI</title>
+<link rel="stylesheet" href="css/upload.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">CareerAI</div>
+    <!-- <div class="nav-right">
+        <button class="nav-link" id="dashboardBtn">Dashboard</button>
+        <button class="nav-outline" id="logoutBtn">Logout</button>
+    </div> -->
+</nav>
+
+<!-- PAGE -->
+<section class="upload-wrapper">
+
+    <div class="back-link" id="backBtn">← Back</div>
+
+    <h1>Upload Your Resume</h1>
+    <p class="subtitle">
+        Get AI-powered career recommendations based on your resume
+    </p>
+    
+
+    <!-- UPLOAD CARD -->
+    <div class="upload-card">
+
+        <div class="drop-area" id="dropArea">
+        <img id="resumePreview" style="display:none;">
+        <div id="uploadContent">
+        <div class="upload-icon">⬆</div>
+        <h3 id="dropTitle">Drop your resume here</h3>
+        <p>or click to browse</p>
+        <button class="browse-btn" id="browseBtn">Choose File</button>
+        <input type="file" id="fileInput" hidden>
+        <small>Supported formats: PDF, DOCX, TXT</small>
+        </div>
+        <button id="retakeBtn" class="retake-btn">Retake</button>
+        </div>
+
+        <button class="primary-btn disabled" id="uploadBtn">
+            Upload & Generate Recommendations
+        </button>
+        <button class="primary-btn camera-trigger" id="cameraBtn">
+            📷 Capture Resume Using Camera
+        </button>
+      </div>
+
+
+</section>
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-box">
+        <div class="spinner"></div>
+
+        <div class="loading-status">
+            <span id="loadingIcon"></span>
+            <span id="loadingStatus"></span>
+        </div>
+
+        <p id="loadingTimer"></p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+<script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js";
+</script>
+<script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+
+<div id="cameraModal" class="camera-modal">
+  <div class="camera-box">
+    <div class="doc-detect-box"></div>
+    <div class="camera-guide"></div>
+    <video id="cameraStream" autoplay></video>
+    <div class="camera-controls">
+      <button id="captureBtn" class="camera-btn">Capture</button>
+      <button id="closeCamera" class="camera-btn cancel">Close</button>
+    </div>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description -->
+    <meta name="description" content="Learn Digital Marketing, UI UX Design, Data Analytics and Cloud Computing at G Tec Computer Education Anna Nagar, Chennai with expert trainers and certification.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="digital marketing course chennai, ui ux design course chennai, data analytics training chennai, cloud computing course chennai, computer courses anna nagar">
+
+    <!-- Author -->
+    <meta name="author" content="G Tec Computer Education Anna Nagar">
+
+    <!-- Robots (Search Engine Indexing) -->
+    <meta name="robots" content="index, follow">
+
+    <title>CareerAI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+fetch("rss.xml")
+.then(response => response.text())
+.then(data => {
+const parser = new DOMParser();
+const xml = parser.parseFromString(data,"text/xml");
+const items = xml.querySelectorAll("item");
+
+let output = "";
+
+items.forEach(item => {
+output += `
+<h3>${item.querySelector("title").textContent}</h3>
+<p>${item.querySelector("description").textContent}</p>
+<a href="${item.querySelector("link").textContent}">Read more</a>
+<hr>
+`;
+});
+
+document.getElementById("rss").innerHTML = output;
+});
+</script>
+
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+    <div class="logo">CareerAI</div>
+    <div id="navActions">
+
+        <button class="btn-primary open-auth cta-assessment">Get Started</button>
+
+    </div>
+
+<style>
+    
+    .welcome-bar{     //css
+        color:black;
+    }
+    #welcomebar{      //js
+
+    }
+
+</style>
+</header>
+
+    <div id="welcomeBar" class="welcome-bar"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">AI-POWERED CAREER GUIDANCE</span>
+            <p id="heroWelcome" class="hero-welcome"></p>
+
+            <h1>
+                Navigate Your Career with <br>
+                <span class="highlight">AI Precision</span>
+            </h1>
+            <p>
+                Get personalized career recommendations, discover ideal job roles, 
+                and access curated learning resources—all powered by advanced AI analysis.
+            </p>
+
+            <div class="hero-buttons">
+            <button class="btn-primary open-auth cta-assessment">Take Assessment →</button>
+            <button class="btn-outline cta-upload">Upload Resume</button>
+            </div>
+        </div>
+
+        <div class="hero-image">
+        <div class="carousel">
+            <img src="https://i.pinimg.com/originals/49/6e/d4/496ed4d9462ba9dad533f03f1c20fa5f.gif" class="active">
+            <img src="https://i.pinimg.com/originals/6e/36/41/6e3641df4d4ff70e70554064ff9739a3.gif">
+            <img src="https://i.pinimg.com/originals/d3/5a/2c/d35a2c4885ba237815fc5178d7e900d1.gif">
+            <img src="https://i.pinimg.com/originals/a9/a7/03/a9a7034c548a23df4e3e9e823a898998.gif">
+        </div>
+        <div class="carousel-progress">
+           <div class="progress-bar"></div>
+        </div>
+</div>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+        <p class="section-subtitle">HOW IT WORKS</p>
+        <h2>Your Path to Career Clarity</h2>
+
+        <div class="cards">
+
+    <div class="card">
+        <div class="icon">
+            <i data-lucide="user"></i>
+        </div>
+        <h3>Share Your Profile</h3>
+        <p>Complete a questionnaire or upload your resume</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">
+            <i data-lucide="bar-chart-3"></i>
+        </div>
+        <h3>AI Analysis</h3>
+        <p>Advanced algorithms analyze your skills and goals</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">
+            <i data-lucide="book-open"></i>
+        </div>
+        <h3>Get Recommendations</h3>
+        <p>Receive personalized career paths and job roles</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">
+            <i data-lucide="rocket"></i>
+        </div>
+        <h3>Take Action</h3>
+        <p>Access curated learning resources to upskill</p>
+    </div>
+
+</div>
+
+    </section>
+<div id="rss"></div>
+    <!-- CTA SECTION -->
+    <section class="cta">
+        <h2>Ready to Discover Your Ideal Career?</h2>
+        <p>Join thousands of professionals who have found clarity in their career journey.</p>
+        <button class="btn-primary open-auth cta-assessment">Get Started Now →</button>
+    </section>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="authModal">
+    <div class="modal">
+        <button class="close-btn" onclick="closeModal()">✕</button>
+
+        <h2>Welcome to CareerAI</h2>
+
+     <div class="tabs">
+    <button type="button" class="tab active" id="loginTab">Login</button>
+    <button type="button" class="tab" id="signupTab">Sign Up</button>
+</div>
+
+
+ <div class="form-wrapper">
+
+    <!-- LOGIN FORM -->
+<form id="loginForm" class="form active">
+
+    <div class="form-message" id="loginMessage"></div>
+
+    <div class="input-group">
+        <input type="text" id="loginIdentifier" placeholder="Email">
+    </div>
+
+    <div class="input-group password-field">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button type="button" class="toggle-btn" data-target="loginPassword">
+            <i data-lucide="eye"></i>
+        </button>
+    </div>
+
+    <button type="submit" class="btn-primary full">Login</button>
+</form>
+
+
+    <!-- SIGNUP FORM -->
+    <form id="signupForm" class="form">
+
+    <div class="form-message" id="signupMessage"></div>
+
+    <div class="input-group">
+        <input type="text" id="signupName" placeholder="Full Name">
+    </div>
+
+    <div class="input-group">
+        <input type="email" id="signupEmail" placeholder="Email Address">
+    </div>
+
+   <!--  <div class="input-group">
+        <input type="tel" id="signupPhone" placeholder="Phone Number">
+    </div> -->
+
+    <div class="input-group password-field">
+        <input type="password" id="signupPassword" placeholder="Create Password">
+        <button type="button" class="toggle-btn" data-target="signupPassword">
+            <i data-lucide="eye"></i>
+        </button>
+    </div>
+
+    <div class="input-group password-field">
+        <input type="password" id="signupConfirmPassword" placeholder="Confirm Password">
+    </div>
+
+    <button type="submit" class="btn-primary full">Create Account</button>
+</form>
+
+
+</div>
+
+
+    </div>
+</div>
+
+<div id="snackbar"></div>
+<!-- THEME PICKER -->
+<div id="themeButton">🎨</div>
+
+<div id="themePanel">
+
+  <p class="theme-title">Theme</p>
+
+    <div class="theme-option" data-theme="light">
+    <span class="dot light"></span>
+    Light
+    </div>
+
+    <div class="theme-option" data-theme="dark">
+    <span class="dot dark"></span>
+    Dark
+    </div>
+
+  <p class="theme-title">Accent</p>
+    <div class="accent-row">
+        <div class="theme-color" data-color="#7c3aed" style="background:#7c3aed"></div>
+        <div class="theme-color" data-color="#22c55e" style="background:#22c55e"></div>
+        <div class="theme-color" data-color="#f97316" style="background:#f97316"></div>
+        <div class="theme-color" data-color="#ef4444" style="background:#ef4444"></div>
+        <div class="theme-color" data-color="#0ea5e9" style="background:#0ea5e9"></div>
+    </div>
+</div>
+</body>
+</html>

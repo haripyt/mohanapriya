@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Recommendations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/recommendations.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+<script src="js/engine.js"></script>
+<script src="js/recommendations.js"></script>
+
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo">CareerAI</div>
+
+        <div class="nav-actions">
+            <button class="nav-btn home-btn" id="homeBtn">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </button>
+
+            <button class="nav-btn logout-btn" id="logoutBtn">
+                <i data-lucide="log-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="back-link" >
+        <i data-lucide="arrow-left"></i>
+        <span id="backBtn">Back to Dashboard</span>
+    </div>
+
+    <h1 class="page-title">Your Career Recommendations</h1>
+    
+
+    <div class="recommendation-meta">
+        <i id="recommendationIcon" data-lucide="clipboard-list"></i>
+        <span id="recommendationSourceText">
+            Generated from your questionnaire
+        </span>
+        <button id="downloadReport" class="download-btn">
+        Download Career Report
+        </button>
+    </div>
+
+    <!-- TABS -->
+  <div class="recommendation-tabs">
+    <button class="tab-btn active" data-tab="paths">
+
+        <i data-lucide="trending-up"></i>
+        <span>Career Paths</span>
+    </button>
+
+    <button class="tab-btn" data-tab="roles">
+        <i data-lucide="briefcase"></i>
+        <span>Job Roles</span>
+    </button>
+
+    <button class="tab-btn" data-tab="skills">
+        <i data-lucide="target"></i>
+        <span>Skills</span>
+    </button>
+
+    <button class="tab-btn" data-tab="skillgap">
+        <i data-lucide="alert-triangle"></i>
+        <span>Skill Gap</span>
+    </button>
+
+    <button class="tab-btn" data-tab="resources">
+        <i data-lucide="book-open"></i>
+        <span>Resources</span>
+    </button>
+</div>
+    <!-- CONTENT -->
+    <div id="tabContent" class="card-grid"></div>
+
+</div>
+
+<script src="js/theme.js"></script>
+</body>
+</html>
